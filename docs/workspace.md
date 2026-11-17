@@ -607,6 +607,8 @@ workspace instead of the agent's capability, the ref in history, or a per-run `w
 
 Other packages implement the same workspace interface. [`pydantic-ai-backend`](https://github.com/vstorm-co/pydantic-ai-backend), a community package by [Vstorm](https://vstorm.co/), provides workspaces backed by Kubernetes pods, local Docker containers, Daytona, a `sandboxd` service that holds the Docker socket so your application container doesn't have to, and in-memory JSON documents your application can keep in its own database.
 
+[`pydantic-ai-kosa8`](https://github.com/kosa8ai/pydantic-ai-kosa8), by [kosa8](https://kosa8.com), provides a `Kosa8Sandbox` capability whose workspace is a kosa8 Cloud sandbox, a microVM with its own kernel. It reattaches from the `WorkspaceRef` in the message history, and its `destroy(ref)` deletes the sandbox. kosa8 Cloud is a paid service.
+
 To add a package to this list, open a pull request. To build your own, see [Writing a backend](#writing-a-backend).
 
 ## Writing a backend
